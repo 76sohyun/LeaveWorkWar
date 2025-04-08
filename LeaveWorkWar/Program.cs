@@ -1,3 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿namespace LeaveWorkWar;
 
-Console.WriteLine("Hello, World!");
+internal class Program
+{
+    public static void Main(string[] args)
+    {
+        Game.Run();
+    }
+}
+
