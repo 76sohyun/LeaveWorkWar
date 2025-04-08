@@ -1,24 +1,35 @@
 ﻿namespace LeaveWorkWar.Scenes;
 
-public class TownScene : BaseScene
+public class TownScene : Standard_Scene
 {
-    public override void Render()
+    public TownScene()
     {
-        
+        name = "Town";
+        Console.ForegroundColor = ConsoleColor.Gray;
+        mapData = new string[]
+        {
+            "█                                                █",
+            "█                                                █",
+            "█                                                █",
+            "█                                                █",
+            "█                                                █",
+            "█                                                █",
+            "██████████████████████████████████████████████████"
+        };
+        Console.ResetColor();
+
+        map = new bool[7, 50];
+        for (int y = 0; y < map.GetLength(0); y++)
+        {
+            for (int x = 0; x < map.GetLength(1); x++)
+            {
+                map[y, x] = mapData[y][x] == '█' ? false : true;
+            }
+        }
     }
 
-    public override void Input()
+    public override void Enter()
     {
-        throw new NotImplementedException();
-    }
-
-    public override void Update()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void Result()
-    {
-        throw new NotImplementedException();
+        Game.Player.map = map;
     }
 }
