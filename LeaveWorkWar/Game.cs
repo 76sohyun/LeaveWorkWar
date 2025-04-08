@@ -43,6 +43,8 @@ public class Game
     {
         Console.CursorVisible = false;
         gameOver = false;
+        cursor = new Cursor();
+        
         sceneDic = new Dictionary<string, BaseScene>();
         sceneDic.Add("Title", new TitleScene());
         sceneDic.Add("Main", new MainStoryScene());

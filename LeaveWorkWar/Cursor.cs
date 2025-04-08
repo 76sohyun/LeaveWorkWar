@@ -2,12 +2,11 @@
 
 public class Cursor
 {
-    private Vector2 position;
-    private ConsoleKey input;
+    public Vector2 position = new Vector2(36,17);
     
     public void Print()
     {
-        Console.SetCursorPosition(36, 17 );
+        Console.SetCursorPosition(position.x, position.y );
         Console.ForegroundColor = ConsoleColor.White;
         Console.Write("▶");
         Console.ResetColor();
@@ -15,38 +14,34 @@ public class Cursor
 
     public void Move(ConsoleKey input)
     {
-        Vector2 target = position;
         switch (input)
         {
             case ConsoleKey.UpArrow:
-                target.y--;
+               position.y--;
+               if (position.y < 17)
+               {
+                   position.y = 19;
+               }
                 break;
             case ConsoleKey.DownArrow:
-                target.y++;
+                position.y++;
+                if (position.y > 19)
+                {
+                    position.y = 17;
+                }
                 break;
             case ConsoleKey.Enter:
-                if (target.y == 17)
+                if (position.y == 17)
                 {
                     Game.ChangeScene("Main");
                 }
-                else if (target.y == 18)
+                else if (position.y == 18)
                 {
                     Game.ChangeScene("Method");
                 }
-                else if (target.y == 19)
+                else if (position.y == 19)
                 {
                     Environment.Exit(0);
-                }
-                else
-                {
-                    if (target.y < 17)
-                    {
-                        target.y = 19;
-                    }
-                    else if (target.y > 19)
-                    {
-                        target.y = 17;
-                    }
                 }
                 break;
         }

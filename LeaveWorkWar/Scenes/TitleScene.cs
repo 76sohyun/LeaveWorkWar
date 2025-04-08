@@ -2,8 +2,8 @@
 
 public class TitleScene : BaseScene
 {
-    public Vector2 position;
     private ConsoleKey input;
+    
     public TitleScene()
     {
         name = "Title";
@@ -30,6 +30,7 @@ public class TitleScene : BaseScene
         Console.WriteLine("                                         시작하기                                          ");
         Console.WriteLine("                                         게임방법                                          ");
         Console.WriteLine("                                         종료하기                                          ");
+        Game.Cursor.Print();
     }
 
     public override void Input()
