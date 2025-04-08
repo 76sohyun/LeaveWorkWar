@@ -10,7 +10,7 @@ public class Player
     public void Print()
     {
         Console.SetCursorPosition(position.x, position.y);
-        Console.ForegroundColor = ConsoleColor.White;
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
         Console.WriteLine(" O");
         Console.SetCursorPosition(position1.x, position1.y);
         Console.WriteLine("/|\\");
@@ -49,7 +49,7 @@ public class Player
                 break;
         }
         
-        if (map[targetPos.y, targetPos.x] == true)
+        if (map[targetPos.y, targetPos.x] == true && map[targetPos.y, targetPos.x + 2] == true)
         {
             position = targetPos;
             position1 = targetPos1;
