@@ -12,6 +12,9 @@ public class Game
     private static Cursor cursor;
     public static Cursor Cursor{get{return cursor;}}
     
+    private static Player player;
+    public static Player Player{get{return player;}}
+    
     private static bool gameOver;
     public static void Run()
     {
@@ -45,10 +48,13 @@ public class Game
         gameOver = false;
         cursor = new Cursor();
         
+        player = new Player();
+        
         sceneDic = new Dictionary<string, BaseScene>();
         sceneDic.Add("Title", new TitleScene());
         sceneDic.Add("Main", new MainStoryScene());
         sceneDic.Add("Method", new GameMethodScene());
+        sceneDic.Add("Town", new TownScene());
         curScene = sceneDic["Title"];
     }
 

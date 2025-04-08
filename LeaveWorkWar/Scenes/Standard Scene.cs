@@ -1,10 +1,10 @@
 ﻿namespace LeaveWorkWar.Scenes;
 
-public class TownScene : BaseScene
+public class Standard_Scene : BaseScene
 {
     public override void Render()
     {
-        
+        throw new NotImplementedException();
     }
 
     public override void Input()
