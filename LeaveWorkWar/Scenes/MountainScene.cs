@@ -1,6 +1,6 @@
 ﻿namespace LeaveWorkWar.Scenes;
 
-public class MountainScene
+public class MountainScene : Standard_Scene
 {
     
 }

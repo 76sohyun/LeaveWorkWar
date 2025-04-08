@@ -36,9 +36,10 @@ public class DownTownScene : Standard_Scene
         gameObjects = new List<GameObject>();
         townportalArt = new List<TownPortalArt>();
         portalArt = new List<PortalArt>();
+        mountainArt = new List<MountainArt>();
         
         townportalArt.Add(new TownPortalArt(ConsoleColor.White, new Vector2(80, 11),new Vector2(80, 12)));
-        gameObjects.Add(new Place("Town", 'T', new Vector2(84, 10)));
+        gameObjects.Add(new Place("Town", 'T', new Vector2(85, 10)));
     }
 
     public override void Enter()

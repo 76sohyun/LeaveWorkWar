@@ -36,10 +36,12 @@ public class TownScene : Standard_Scene
         gameObjects = new List<GameObject>();
         portalArt = new List<PortalArt>();
         townportalArt = new List<TownPortalArt>();
+        mountainArt = new List<MountainArt>();
         
         portalArt.Add(new PortalArt(ConsoleColor.White, new Vector2(80, 4),new Vector2(80, 5)));
-        gameObjects.Add(new Place("DownTown", 'D', new Vector2(84, 3)));
-        
+        gameObjects.Add(new Place("DownTown", 'D', new Vector2(85, 3)));
+        mountainArt.Add(new MountainArt(ConsoleColor.Green, new Vector2(50, 4), new Vector2(50, 5)));
+        gameObjects.Add(new Place("Mountain", 'M', new Vector2(53, 3)));
     }
 
     public override void Enter()
@@ -49,6 +51,12 @@ public class TownScene : Standard_Scene
             Game.Player.position = new Vector2(85,3);
             Game.Player.position1 = new Vector2(85,4);
             Game.Player.position2 = new Vector2(85,5);
+        }
+        else if (Game.prevSceneName == "Mountain")
+        {
+            Game.Player.position = new Vector2(54,3);
+            Game.Player.position1 = new Vector2(54,4);
+            Game.Player.position2 = new Vector2(54,5);
         }
         
         Game.Player.map = map;

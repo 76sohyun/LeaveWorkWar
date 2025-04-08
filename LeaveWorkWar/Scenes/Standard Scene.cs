@@ -9,6 +9,7 @@ public abstract class Standard_Scene : BaseScene
     protected List<GameObject> gameObjects;
     protected List<PortalArt> portalArt;
     protected List<TownPortalArt> townportalArt;
+    protected List<MountainArt> mountainArt;
     public override void Render()
     {
         PrintMap();
@@ -26,7 +27,16 @@ public abstract class Standard_Scene : BaseScene
         {
             tr.Draw();
         }
+
+        foreach (MountainArt mr in mountainArt)
+        {
+            mr.Draw();
+        }
         Game.Player.Print();
+        
+        Console.SetCursorPosition(0, map.GetLength(0) + 2);
+        Game.Player.MoneyPrint();
+        Game.Player.HpPrint();
     }
 
     public override void Input()
