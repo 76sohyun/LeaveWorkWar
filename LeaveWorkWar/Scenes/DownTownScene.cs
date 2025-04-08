@@ -1,10 +1,10 @@
 ﻿namespace LeaveWorkWar.Scenes;
 
-public class TownScene : Standard_Scene
+public class DownTownScene : Standard_Scene
 {
-    public TownScene()
+    public DownTownScene()
     {
-        name = "Town";
+        name = "DownTown";
         Console.ForegroundColor = ConsoleColor.Gray;
         mapData = new string[]
         {
@@ -34,21 +34,20 @@ public class TownScene : Standard_Scene
             }
         }
         gameObjects = new List<GameObject>();
-        portalArt = new List<PortalArt>();
         townportalArt = new List<TownPortalArt>();
+        portalArt = new List<PortalArt>();
         
-        portalArt.Add(new PortalArt(ConsoleColor.White, new Vector2(80, 4),new Vector2(80, 5)));
-        gameObjects.Add(new Place("DownTown", 'D', new Vector2(84, 3)));
-        
+        townportalArt.Add(new TownPortalArt(ConsoleColor.White, new Vector2(80, 11),new Vector2(80, 12)));
+        gameObjects.Add(new Place("Town", 'T', new Vector2(84, 10)));
     }
 
     public override void Enter()
     {
-        if (Game.prevSceneName == "DownTown")
+        if (Game.prevSceneName == "Town")
         {
-            Game.Player.position = new Vector2(85,3);
-            Game.Player.position1 = new Vector2(85,4);
-            Game.Player.position2 = new Vector2(85,5);
+            Game.Player.position = new Vector2(85,10);
+            Game.Player.position1 = new Vector2(85,11);
+            Game.Player.position2 = new Vector2(85,12);
         }
         
         Game.Player.map = map;

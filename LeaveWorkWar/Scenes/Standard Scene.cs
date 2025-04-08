@@ -5,10 +5,27 @@ public abstract class Standard_Scene : BaseScene
     protected string[] mapData;
     protected bool[,] map;
     private ConsoleKey input;
-    
+
+    protected List<GameObject> gameObjects;
+    protected List<PortalArt> portalArt;
+    protected List<TownPortalArt> townportalArt;
     public override void Render()
     {
         PrintMap();
+        foreach (GameObject go in gameObjects)
+        {
+            go.Print();
+        }
+
+        foreach (PortalArt ar in portalArt)
+        {
+            ar.Draw();
+        }
+
+        foreach (TownPortalArt tr in townportalArt)
+        {
+            tr.Draw();
+        }
         Game.Player.Print();
     }
 
@@ -24,7 +41,23 @@ public abstract class Standard_Scene : BaseScene
 
     public override void Result()
     {
-        
+        foreach (GameObject go in gameObjects)
+        {
+            if (Game.Player.position == go.position || Game.Player.position1 == go.position || Game.Player.position2 == go.position)
+            {
+                switch (input)
+                {
+                    case ConsoleKey.F:
+                        go.Interact(Game.Player);
+                        break;
+                }
+                if (go.isOnce == true)
+                {
+                    gameObjects.Remove(go);
+                }
+                break;
+            }
+        }
     }
 
     private void PrintMap()
