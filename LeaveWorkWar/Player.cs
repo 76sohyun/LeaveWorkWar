@@ -8,7 +8,7 @@ public class Player
     public bool[,] map;
 
     private int money;
-    public int Money { get { return money; } }
+    public int Money { get { return money; } set { money = value; } }
 
     private int curHp;
     public int CurHp {get { return curHp; } set{ curHp = value; } }
@@ -64,6 +64,14 @@ public class Player
         {
             case ConsoleKey.LeftArrow:
             case ConsoleKey.RightArrow:
+            case ConsoleKey.Spacebar:
+                if (input == ConsoleKey.Spacebar)
+                {
+                    Thread.Sleep(1000);
+                    position.y++;
+                    position1.y++;
+                    position2.y++;
+                }
                 Move(input);
                 break;
         }
@@ -85,6 +93,12 @@ public class Player
                 targetPos.x++;
                 targetPos1.x++;
                 targetPos2.x++;
+                break;
+            case ConsoleKey.Spacebar:
+                targetPos.y--;
+                targetPos1.y--;
+                targetPos2.y--;
+                
                 break;
         }
         

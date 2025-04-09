@@ -19,7 +19,7 @@ public class TownPortalArt
     {
         Console.SetCursorPosition(position1.x, position1.y);
         Console.ForegroundColor = Color;
-        Console.WriteLine(" ㅡㅡㅡㅡ");
+        Console.WriteLine(" ㅡㅡㅡ");
         Console.SetCursorPosition(position2.x, position2.y);
         Console.WriteLine("| Town |");
         Console.ResetColor();

@@ -47,6 +47,7 @@ public abstract class Standard_Scene : BaseScene
     public override void Update()
     {
         Game.Player.Action(input);
+        
     }
 
     public override void Result()
