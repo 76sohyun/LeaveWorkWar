@@ -1,12 +1,12 @@
 ﻿namespace LeaveWorkWar.Items;
 
-public class DiaGun : Item
+public class LegendGun : Item
 {
-    public DiaGun()
+    public LegendGun()
     {
-        name = "샷건";
-        price = 150000;
-        description = "사냥꾼의 총, 공격력을 +4, 거리를 3 늘려준다.";
+        name = "저격총";
+        price = 500000;
+        description = "전설의 총, 공격력을 +10, 거리를 20 늘려준다.";
         symbol = "○";
         
     }
@@ -19,8 +19,9 @@ public class DiaGun : Item
             Vector2 dir = Game.Player.direction;
             Game.Player.Bullet = new Bullet(start, dir, 3);  // 기본 거리 3
         }
-        Bullet.Maxdistance += 3;
-        Game.Player.Bullet.Attack += 4;
-        Console.WriteLine("공격력 +4 거리 +3");
+        
+        Bullet.Maxdistance += 20;
+        Game.Player.Bullet.Attack += 10;
+        Console.WriteLine("공격력 +10 거리 +20");
     }
 }

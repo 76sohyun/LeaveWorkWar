@@ -21,6 +21,9 @@ public class TownStore
         stack = new Stack<string>();
 
         items.Add(new Potion());
+        items.Add(new IronGun());
+        items.Add(new DiaGun());
+        items.Add(new LegendGun());
     }
 
     public void Buy(Player player, Item item)
@@ -36,6 +39,11 @@ public class TownStore
             {
                 Util.PressAnyKey("돈이 부족합니다.");
             }
+        }
+
+        if (item.name == "IronGun"|| item.name == "DiaGun" || item.name == "LegendGun")
+        {
+            items.Remove(item);
         }
     }
 
@@ -144,7 +152,7 @@ public void PrintAll()
         Console.ResetColor();
         for (int i = 0; i < items.Count; i++)
         {
-            Console.WriteLine($"{i + 1}. {items[i].name}{items[i].symbol} - {items[i].price}원 + {items[i].description} +");
+            Console.WriteLine($"{i + 1}. {items[i].symbol} {items[i].name} - {items[i].price}원 + {items[i].description} +");
         }
         Console.ForegroundColor = ConsoleColor.Cyan;
         Console.WriteLine("████████████████████████████████████████████████████████████████████████████████████████████████");

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using LeaveWorkWar.Items;
 
 namespace LeaveWorkWar;
 
@@ -8,7 +9,7 @@ public class Player
     public Vector2 position1 = new Vector2(1,4);
     public Vector2 position2 = new Vector2(1,5);
     public bool[,] map;
-
+    public Vector2 direction = new Vector2(1, 0);
     private int money;
     public int Money { get { return money; } set { money = value; } }
 
@@ -23,7 +24,7 @@ public class Player
     public TownStore townStore;
     
     private Bullet bullet;
-    public Bullet Bullet { get { return bullet; }}
+    public Bullet Bullet { get { return bullet; } set{ bullet = value; } }
 
     public Player()
     {
@@ -31,10 +32,9 @@ public class Player
         curHp = maxHp;
         inventory = new Inventory();
         townStore = new TownStore();
-        
-
+        money = 1000000;
     }
-
+    
     public bool IsDead()
     {
         return curHp == 0;
@@ -77,15 +77,23 @@ public class Player
         switch (input)
         {
             case ConsoleKey.LeftArrow:
-            case ConsoleKey.RightArrow:
-            case ConsoleKey.Spacebar:
                 Move(input);
+                direction.x = -1;
+                break;
+            case ConsoleKey.RightArrow:
+                Move(input);
+                direction.x = 1;
                 break;
             case ConsoleKey.I:
                 Inventory.Open();
                 break;
+            case ConsoleKey.Spacebar:
+                Shoot();
+                break;
+
         }
     }
+
 
     public void Move(ConsoleKey input)
     {
@@ -126,6 +134,23 @@ public class Player
             Console.WriteLine($"                 {money}원");
         }
         Console.WriteLine("--------------------------------------------");
+    }
+    
+
+    public void Shoot()
+    {
+        Vector2 startPos = new Vector2();
+        startPos.x = position1.x + direction.x * 2;
+        startPos.y = position1.y;
+        
+        bullet = new Bullet(startPos, direction, 3);
+        int count = 0;
+        while (count < Bullet.Maxdistance)
+        {
+            bullet.Update();
+            bullet.Draw();
+            count++;            
+        }
     }
 
     

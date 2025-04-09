@@ -15,9 +15,17 @@ public class Inventory
         stack = new Stack<string>();
     }
 
-    public void Add(Item item)
+    public void Add(Item newItem)
     {
-        items.Add(item);
+        foreach (Item item in items)
+        {
+            if (item.name == newItem.name)
+            {
+                item.amount += newItem.amount;
+                return;
+            }
+        }
+        items.Add(newItem);
     }
 
     public void Remove(Item item)
@@ -189,7 +197,7 @@ public class Inventory
 
             for (int i = 0; i < items.Count; i++)
             {
-                Console.WriteLine("▷ {1} {2}개 ",items[i].name, items[i].amount);
+                Console.WriteLine("▷ {0} {1}개 ",items[i].name, items[i].amount);
             }
 
             Console.WriteLine("=========================================================================================");
