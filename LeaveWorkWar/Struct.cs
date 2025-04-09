@@ -1,4 +1,6 @@
-﻿namespace LeaveWorkWar;
+﻿using System.Xml.Xsl;
+
+namespace LeaveWorkWar;
 
 public struct Vector2
 {
@@ -19,5 +21,10 @@ public struct Vector2
     public static bool operator !=(Vector2 left, Vector2 right)
     {
         return left.x != right.x || left.y != right.y;
+    }
+    
+    public static Vector2 operator +(Vector2 left, Vector2 right)
+    {
+        return new Vector2(left.x + left.x, right.y + right.y);
     }
 }

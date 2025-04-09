@@ -1,4 +1,6 @@
-﻿namespace LeaveWorkWar;
+﻿using System.ComponentModel;
+
+namespace LeaveWorkWar;
 
 public class Player
 {
@@ -19,6 +21,9 @@ public class Player
     public Inventory Inventory { get { return inventory; }}
     
     public TownStore townStore;
+    
+    private Bullet bullet;
+    public Bullet Bullet { get { return bullet; }}
 
     public Player()
     {
@@ -26,7 +31,8 @@ public class Player
         curHp = maxHp;
         inventory = new Inventory();
         townStore = new TownStore();
-       
+        
+
     }
 
     public bool IsDead()
@@ -78,7 +84,6 @@ public class Player
             case ConsoleKey.I:
                 Inventory.Open();
                 break;
-            
         }
     }
 
@@ -98,12 +103,6 @@ public class Player
                 targetPos.x++;
                 targetPos1.x++;
                 targetPos2.x++;
-                break;
-            case ConsoleKey.Spacebar:
-                targetPos.y--;
-                targetPos1.y--;
-                targetPos2.y--;
-                
                 break;
         }
         
@@ -128,4 +127,7 @@ public class Player
         }
         Console.WriteLine("--------------------------------------------");
     }
+
+    
+    
 }

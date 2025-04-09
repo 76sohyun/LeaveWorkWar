@@ -35,6 +35,7 @@ public class Game
         }
         End();
     }
+    
 
     public static void ChangeScene(string sceneName)
     {
