@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.Design;
+using System.Diagnostics;
 using LeaveWorkWar.Scenes;
 
 namespace LeaveWorkWar;
@@ -18,6 +19,7 @@ public class Game
     private static bool gameOver;
     public static void Run()
     {
+        
         Start();
         while (gameOver == false)
         {

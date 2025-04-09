@@ -30,17 +30,20 @@ public class MountainScene : Standard_Scene
         portalArt = new List<PortalArt>();
         townportalArt = new List<TownPortalArt>();
         mountainArt = new List<MountainArt>();
+        mountaincoinArt = new List<MountaincoinArt>();
         townportalArt.Add(new TownPortalArt(ConsoleColor.White, new Vector2(1, 4),new Vector2(1,5)));
-        gameObjects.Add(new Place("Town", 'T', new Vector2(4, 3)));
+        gameObjects.Add(new Place("Town", 'T', new Vector2(5, 3)));
+        mountaincoinArt.Add(new MountaincoinArt(ConsoleColor.Yellow, new Vector2(60, 1), new Vector2(60,2)));
+        gameObjects.Add(new MountainGetCoin(new Vector2(63,3)));
     }
 
     public override void Enter()
     {
         if (Game.prevSceneName == "Town")
         {
-            Game.Player.position = new Vector2(4,3);
-            Game.Player.position1 = new Vector2(4,4);
-            Game.Player.position2 = new Vector2(4,5);
+            Game.Player.position = new Vector2(8,3);
+            Game.Player.position1 = new Vector2(8,4);
+            Game.Player.position2 = new Vector2(8,5);
         }
         Game.Player.map = map;
     }

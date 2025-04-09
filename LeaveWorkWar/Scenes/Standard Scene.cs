@@ -10,6 +10,9 @@ public abstract class Standard_Scene : BaseScene
     protected List<PortalArt> portalArt;
     protected List<TownPortalArt> townportalArt;
     protected List<MountainArt> mountainArt;
+    protected List<MountaincoinArt> mountaincoinArt;
+
+    public bool isPress;
     public override void Render()
     {
         PrintMap();
@@ -32,16 +35,29 @@ public abstract class Standard_Scene : BaseScene
         {
             mr.Draw();
         }
+
+        foreach (MountaincoinArt mc in mountaincoinArt)
+        {
+            mc.Draw();
+        }
+        
         Game.Player.Print();
         
         Console.SetCursorPosition(0, map.GetLength(0) + 2);
         Game.Player.MoneyPrint();
         Game.Player.HpPrint();
+        Console.SetCursorPosition(0, map.GetLength(0) + 5);
+        Game.Player.Inventory.PrintAll();
     }
 
     public override void Input()
     {
         input = Console.ReadKey(true).Key;
+        if (isPress == true)
+        {
+            Thread.Sleep(10);
+            isPress = false;
+        }
     }
 
     public override void Update()
@@ -60,6 +76,7 @@ public abstract class Standard_Scene : BaseScene
                 {
                     case ConsoleKey.F:
                         go.Interact(Game.Player);
+                        isPress = true;
                         break;
                 }
                 if (go.isOnce == true)

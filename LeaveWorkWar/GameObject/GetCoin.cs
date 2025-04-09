@@ -7,8 +7,7 @@ public abstract class GetCoin : GameObject
 
     public GetCoin(char symbol, Vector2 position) : base(ConsoleColor.Magenta, symbol, position, false)
     {
-        name = "티끌모아코인";
-        money = 20;
+        
     }
 
     public override void Interact(Player player)

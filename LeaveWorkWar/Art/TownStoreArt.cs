@@ -1,6 +1,6 @@
 ﻿namespace LeaveWorkWar;
 
-public class MountainCoin 
+public class TownStoreArt
 {
-   
+    
 }

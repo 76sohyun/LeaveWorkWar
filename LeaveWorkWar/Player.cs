@@ -14,11 +14,15 @@ public class Player
     public int CurHp {get { return curHp; } set{ curHp = value; } }
     private int maxHp;
     public int MaxHp {get { return maxHp; }}
+    
+    private Inventory inventory;
+    public Inventory Inventory { get { return inventory; }}
 
     public Player()
     {
         maxHp = 10;
         curHp = maxHp;
+        inventory = new Inventory();
     }
 
     public bool IsDead()
@@ -65,15 +69,12 @@ public class Player
             case ConsoleKey.LeftArrow:
             case ConsoleKey.RightArrow:
             case ConsoleKey.Spacebar:
-                if (input == ConsoleKey.Spacebar)
-                {
-                    Thread.Sleep(1000);
-                    position.y++;
-                    position1.y++;
-                    position2.y++;
-                }
                 Move(input);
                 break;
+            case ConsoleKey.I:
+                Inventory.Open();
+                break;
+            
         }
     }
 
