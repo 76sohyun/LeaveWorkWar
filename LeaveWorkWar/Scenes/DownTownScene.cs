@@ -38,6 +38,7 @@ public class DownTownScene : Standard_Scene
         portalArt = new List<PortalArt>();
         mountainArt = new List<MountainArt>();
         mountaincoinArt = new List<MountaincoinArt>();
+        townstoreArt = new List<TownStoreArt>();
         
         townportalArt.Add(new TownPortalArt(ConsoleColor.White, new Vector2(80, 11),new Vector2(80, 12)));
         gameObjects.Add(new Place("Town", 'T', new Vector2(85, 10)));

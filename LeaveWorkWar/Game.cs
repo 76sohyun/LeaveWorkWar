@@ -50,6 +50,7 @@ public class Game
         gameOver = false;
         cursor = new Cursor();
         
+        
         player = new Player();
         
         sceneDic = new Dictionary<string, BaseScene>();
@@ -59,6 +60,7 @@ public class Game
         sceneDic.Add("Town", new TownScene());
         sceneDic.Add("DownTown", new DownTownScene());
         sceneDic.Add("Mountain", new MountainScene());
+        
         curScene = sceneDic["Title"];
         
        

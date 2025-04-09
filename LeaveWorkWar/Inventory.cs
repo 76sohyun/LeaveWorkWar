@@ -189,7 +189,7 @@ public class Inventory
 
             for (int i = 0; i < items.Count; i++)
             {
-                Console.WriteLine("{0}{1} : {2} ", i+1,items[i].symbol, items[i].name);
+                Console.WriteLine("▷ {1} {2}개 ",items[i].name, items[i].amount);
             }
 
             Console.WriteLine("=========================================================================================");

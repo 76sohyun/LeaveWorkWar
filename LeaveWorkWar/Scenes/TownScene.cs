@@ -38,11 +38,16 @@ public class TownScene : Standard_Scene
         townportalArt = new List<TownPortalArt>();
         mountainArt = new List<MountainArt>();
         mountaincoinArt = new List<MountaincoinArt>();
+        townstoreArt = new List<TownStoreArt>();
+        
+        
         
         portalArt.Add(new PortalArt(ConsoleColor.White, new Vector2(80, 4),new Vector2(80, 5)));
         gameObjects.Add(new Place("DownTown", 'D', new Vector2(85, 3)));
         mountainArt.Add(new MountainArt(ConsoleColor.Green, new Vector2(50, 4), new Vector2(50, 5)));
         gameObjects.Add(new Place("Mountain", 'M', new Vector2(53, 3)));
+        townstoreArt.Add(new TownStoreArt(ConsoleColor.DarkRed, new Vector2(30, 4), new Vector2(30, 5)));
+        gameObjects.Add(new TStore('S', new Vector2(33, 3)));
     }
 
     public override void Enter()
@@ -59,7 +64,6 @@ public class TownScene : Standard_Scene
             Game.Player.position1 = new Vector2(54,4);
             Game.Player.position2 = new Vector2(54,5);
         }
-        
         Game.Player.map = map;
     }
 }

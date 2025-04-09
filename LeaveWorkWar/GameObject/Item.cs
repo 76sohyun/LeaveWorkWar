@@ -2,15 +2,16 @@
 
 public abstract class Item
 {
-    public string symbol;
     public string name;
     public string description;
+    public int price;
+    public int amount;
+    public string symbol;
+    
 
-    public Item(string symbol, string name, string description)
+    public Item()
     {
-        this.symbol = symbol;
-        this.name = name;
-        this.description = description;
+        
     }
     
     public abstract void Use();

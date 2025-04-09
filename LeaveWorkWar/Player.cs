@@ -17,12 +17,16 @@ public class Player
     
     private Inventory inventory;
     public Inventory Inventory { get { return inventory; }}
+    
+    public TownStore townStore;
 
     public Player()
     {
         maxHp = 10;
         curHp = maxHp;
         inventory = new Inventory();
+        townStore = new TownStore();
+       
     }
 
     public bool IsDead()
