@@ -87,6 +87,9 @@ public class MineStore
             case ConsoleKey.B:
                 stack.Push("UseMenu");
                 break;
+            case ConsoleKey.S:
+                stack.Push("SellMenu");
+                break;
             case ConsoleKey.C:
                 stack.Pop();
                 break;

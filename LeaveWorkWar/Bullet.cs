@@ -26,6 +26,7 @@ public class Bullet
         if (position.x > 90 || position.x < 0)
             IsShoot = false;
         
+        
     }
 
     public void Draw()
@@ -44,14 +45,7 @@ public class Bullet
         }    
     }
 
-    public void Collision(Target target)
-    {
-        if (position.x == target.position.x)
-        {
-            target.Attack();
-            IsShoot = false;
-        }
-    }
+    
     
     
     

@@ -36,7 +36,6 @@ public class Player
         townStore = new TownStore();
         pickStore = new PickStore();
         mineStore = new MineStore();
-        money = 1000000;
     }
     
     public bool IsDead()

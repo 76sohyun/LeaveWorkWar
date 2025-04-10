@@ -5,6 +5,8 @@ public abstract class Standard_Scene : BaseScene
     protected string[] mapData;
     protected bool[,] map;
     private ConsoleKey input;
+    private Bullet bullet;
+    private Target target;
 
     protected List<GameObject> gameObjects;
     protected List<PortalArt> portalArt;
@@ -105,6 +107,7 @@ public abstract class Standard_Scene : BaseScene
     public override void Update()
     {
         Game.Player.Action(input);
+        
     }
 
     public override void Result()

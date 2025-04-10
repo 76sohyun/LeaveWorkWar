@@ -2,12 +2,10 @@
 
 public class ForestScene : Standard_Scene
 {
-    private Bullet bullet;
-    public Bullet Bullet { get { return bullet; } }
-    private Target target;
-    public Target Target { get { return target; } }
+    
     public ForestScene() 
     {
+       
         name = "Forest";
         Console.ForegroundColor = ConsoleColor.DarkGreen;
         mapData = new string[]
@@ -49,11 +47,7 @@ public class ForestScene : Standard_Scene
         forestgunArt.Add(new ForestGunArt(ConsoleColor.DarkRed, new Vector2(30,2)));
         
     }
-
-    public void Update()
-    {
-        bullet.Collision(target);
-    }
+    
 
     public override void Enter()
     {
