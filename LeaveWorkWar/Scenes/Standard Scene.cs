@@ -12,6 +12,7 @@ public abstract class Standard_Scene : BaseScene
     protected List<MountainArt> mountainArt;
     protected List<MountaincoinArt> mountaincoinArt;
     protected List<TownStoreArt> townstoreArt;
+    protected List<PickStoreArt> pickstoreArt;
 
     public bool isPress;
     public override void Render()
@@ -45,6 +46,11 @@ public abstract class Standard_Scene : BaseScene
         foreach (TownStoreArt st in townstoreArt)
         {
             st.Draw();
+        }
+
+        foreach (PickStoreArt p in pickstoreArt)
+        {
+            p.Draw();
         }
         
         Game.Player.Print();

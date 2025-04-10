@@ -22,6 +22,10 @@ public class Bullet
     {
         position.x = position.x + direction.x;
         position.y = position.y + direction.y;
+        
+        if (position.x > 90 || position.x < 0)
+            IsShoot = false;
+        
     }
 
     public void Draw()

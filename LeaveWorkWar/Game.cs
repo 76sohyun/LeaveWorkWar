@@ -63,8 +63,27 @@ public class Game
         sceneDic.Add("Mountain", new MountainScene());
         
         curScene = sceneDic["Title"];
+    }
+    
+    public static void GameOver(string reason)
+    {
+        Console.WriteLine("**********************************");
+        Console.WriteLine("*            게임오버...           *");
+        Console.WriteLine("**********************************");
+        Console.WriteLine();
+        Console.WriteLine(reason);
         
-       
+        gameOver = true;
+    }
+
+    public static void GameClear()
+    {
+        Console.WriteLine("☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ");
+        Console.WriteLine("                                   퇴 근 성 공                                       ");
+        Console.WriteLine("☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ");
+        Console.WriteLine("여러분들 저 이만 퇴근하겠습니다. 안ㄴ여어어어~~~");
+        
+        gameOver = true;
     }
 
     public static void End()

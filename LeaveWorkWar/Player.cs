@@ -22,6 +22,7 @@ public class Player
     public Inventory Inventory { get { return inventory; }}
     
     public TownStore townStore;
+    public PickStore pickStore;
     
     private Bullet bullet;
     public Bullet Bullet { get { return bullet; } set{ bullet = value; } }
@@ -32,6 +33,7 @@ public class Player
         curHp = maxHp;
         inventory = new Inventory();
         townStore = new TownStore();
+        pickStore = new PickStore();
         money = 1000000;
     }
     

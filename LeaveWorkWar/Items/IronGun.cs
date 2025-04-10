@@ -5,7 +5,7 @@ public class IronGun : Item
   
     public IronGun()
     {
-        name = "권총";
+        name = "권총강화주문서";
         price = 50000;
         description = "경찰이 쓰던 총, 공격력을 +1, 거리를 1 늘려준다.";
         symbol = "○";
@@ -16,9 +16,9 @@ public class IronGun : Item
    {
        if (Game.Player.Bullet == null)
        {
-           Vector2 start = Game.Player.position; // 적절한 위치로 수정
+           Vector2 start = Game.Player.position; 
            Vector2 dir = Game.Player.direction;
-           Game.Player.Bullet = new Bullet(start, dir, 3);  // 기본 거리 3
+           Game.Player.Bullet = new Bullet(start, dir, 3); 
        }
        Bullet.Maxdistance += 1;
        Game.Player.Bullet.Attack += 1;

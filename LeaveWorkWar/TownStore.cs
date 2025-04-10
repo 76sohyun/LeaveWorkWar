@@ -41,7 +41,7 @@ public class TownStore
             }
         }
 
-        if (item.name == "IronGun"|| item.name == "DiaGun" || item.name == "LegendGun")
+        if (item is IronGun || item is DiaGun || item is LegendGun)
         {
             items.Remove(item);
         }

@@ -19,9 +19,9 @@ public class PickStoreArt
     {
         Console.SetCursorPosition(position1.x, position1.y);
         Console.ForegroundColor = Color;
-        Console.WriteLine(" ㅡㅡㅡ");
+        Console.WriteLine("☆ ★ ☆ ★ ☆");
         Console.SetCursorPosition(position2.x, position2.y);
-        Console.WriteLine("| Town |");
+        Console.WriteLine("|  Draw  |");
         Console.ResetColor();
     }
 }

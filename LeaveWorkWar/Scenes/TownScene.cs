@@ -39,6 +39,7 @@ public class TownScene : Standard_Scene
         mountainArt = new List<MountainArt>();
         mountaincoinArt = new List<MountaincoinArt>();
         townstoreArt = new List<TownStoreArt>();
+        pickstoreArt = new List<PickStoreArt>();
         
         
         
@@ -48,6 +49,9 @@ public class TownScene : Standard_Scene
         gameObjects.Add(new Place("Mountain", 'M', new Vector2(53, 3)));
         townstoreArt.Add(new TownStoreArt(ConsoleColor.DarkRed, new Vector2(30, 4), new Vector2(30, 5)));
         gameObjects.Add(new TStore('S', new Vector2(33, 3)));
+        pickstoreArt.Add(new PickStoreArt(ConsoleColor.Cyan, new Vector2(10, 4), new Vector2(10, 5)));
+        gameObjects.Add(new PStore('P', new Vector2(13, 3)));
+        
     }
 
     public override void Enter()
