@@ -43,6 +43,8 @@ public class TownScene : Standard_Scene
         mineArt = new List<MineArt>();
         mineralArt = new List<MineralArt>();
         minestoreArt = new List<MineStoreArt>();
+        forestArt = new List<ForestArt>();
+        forestgunArt = new List<ForestGunArt>();
         
         portalArt.Add(new PortalArt(ConsoleColor.White, new Vector2(80, 4),new Vector2(80, 5)));
         gameObjects.Add(new Place("DownTown", 'D', new Vector2(85, 3)));

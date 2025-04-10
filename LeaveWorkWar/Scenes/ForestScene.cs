@@ -2,6 +2,10 @@
 
 public class ForestScene : Standard_Scene
 {
+    private Bullet bullet;
+    public Bullet Bullet { get { return bullet; } }
+    private Target target;
+    public Target Target { get { return target; } }
     public ForestScene() 
     {
         name = "Forest";
@@ -36,9 +40,19 @@ public class ForestScene : Standard_Scene
         pickstoreArt = new List<PickStoreArt>();
         mineralArt = new List<MineralArt>();
         minestoreArt = new List<MineStoreArt>();
+        forestArt = new List<ForestArt>();
+        forestgunArt = new List<ForestGunArt>();
         
         portalArt.Add(new PortalArt(ConsoleColor.White, new Vector2(1, 4),new Vector2(1,5)));
         gameObjects.Add(new Place("DownTown", 'D', new Vector2(5, 3)));
+        gameObjects.Add(new Target(new Vector2(80, 4) ,100));
+        forestgunArt.Add(new ForestGunArt(ConsoleColor.DarkRed, new Vector2(30,2)));
+        
+    }
+
+    public void Update()
+    {
+        bullet.Collision(target);
     }
 
     public override void Enter()

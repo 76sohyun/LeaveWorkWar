@@ -16,6 +16,8 @@ public abstract class Standard_Scene : BaseScene
     protected List<MineArt> mineArt;
     protected List<MineralArt> mineralArt;
     protected List<MineStoreArt> minestoreArt;
+    protected List<ForestArt> forestArt;
+    protected List<ForestGunArt> forestgunArt;
 
     public bool isPress;
     public override void Render()
@@ -70,6 +72,16 @@ public abstract class Standard_Scene : BaseScene
         {
             ms.Draw();
         }
+
+        foreach (ForestArt fm in forestArt)
+        {
+            fm.Draw();
+        }
+
+        foreach (ForestGunArt fgm in forestgunArt)
+        {
+            fgm.Draw();
+        }
         
         Game.Player.Print();
         
@@ -93,7 +105,6 @@ public abstract class Standard_Scene : BaseScene
     public override void Update()
     {
         Game.Player.Action(input);
-        
     }
 
     public override void Result()

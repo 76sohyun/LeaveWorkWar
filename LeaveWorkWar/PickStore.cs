@@ -106,18 +106,21 @@ public class PickStore
                     {
                         Console.WriteLine("틔근권");
                         Console.WriteLine("어잇쿠.... 퇴근 실패!!");
+                        player.CurHp--;
                     }
                     else if (value < 66)
                     {
                         Console.WriteLine("퇴군권");
                         Console.WriteLine("어잇쿠.... 퇴근 실패!!");
+                        player.CurHp--;
                     }
-               // else if (value < 99)
-               // {
-               //     Console.WriteLine("퇴근귄");
-               //     Console.WriteLine("어잇쿠.... 퇴근 실패!!");
-               // }
-                    else if(value < 100) // value == 99
+                    else if (value < 99)
+                    {
+                        Console.WriteLine("퇴근귄");
+                        Console.WriteLine("어잇쿠.... 퇴근 실패!!");
+                        player.CurHp--;
+                    }
+                    else 
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("퇴근권");

@@ -43,6 +43,16 @@ public class Bullet
             Console.Write(" ");
         }    
     }
+
+    public void Collision(Target target)
+    {
+        if (position.x == target.position.x)
+        {
+            target.Attack();
+            IsShoot = false;
+        }
+    }
+    
     
     
 }

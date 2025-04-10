@@ -36,6 +36,8 @@ public class MineScene : Standard_Scene
         pickstoreArt = new List<PickStoreArt>();
         mineralArt = new List<MineralArt>();
         minestoreArt = new List<MineStoreArt>();
+        forestArt = new List<ForestArt>();
+        forestgunArt = new List<ForestGunArt>();
         
         portalArt.Add(new PortalArt(ConsoleColor.White, new Vector2(1, 4),new Vector2(1,5)));
         gameObjects.Add(new Place("DownTown", 'D', new Vector2(5, 3)));
