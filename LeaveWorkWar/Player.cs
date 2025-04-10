@@ -157,6 +157,16 @@ public class Player
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        curHp -= damage;
+        
+        if (curHp <= 0)
+        {
+            Game.GameOver("체력이 0이 되어 사망하였습니다...");
+        }
+    }
+
     
     
 }

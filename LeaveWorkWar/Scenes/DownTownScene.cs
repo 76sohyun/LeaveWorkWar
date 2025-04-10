@@ -62,7 +62,6 @@ public class DownTownScene : Standard_Scene
         }
         else if (Game.prevSceneName == "Mine")
         {
-            
             Game.Player.position = new Vector2(55,10);
             Game.Player.position1 = new Vector2(55,11);
             Game.Player.position2 = new Vector2(55,12);

@@ -62,6 +62,7 @@ public class Game
         sceneDic.Add("DownTown", new DownTownScene());
         sceneDic.Add("Mountain", new MountainScene());
         sceneDic.Add("Mine", new MineScene());
+        sceneDic.Add("Forest", new ForestScene());
         
         curScene = sceneDic["Title"];
     }
@@ -79,12 +80,14 @@ public class Game
 
     public static void GameClear()
     {
+        Console.Clear();
         Console.WriteLine("☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ");
         Console.WriteLine("                                   퇴 근 성 공                                       ");
         Console.WriteLine("☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ☆ ★ ");
         Console.WriteLine("여러분들 저 이만 퇴근하겠습니다. 안ㄴ여어어어~~~");
         
-        gameOver = true;
+        
+        Environment.Exit(0);
     }
 
     public static void End()

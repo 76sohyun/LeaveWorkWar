@@ -112,17 +112,18 @@ public class PickStore
                         Console.WriteLine("퇴군권");
                         Console.WriteLine("어잇쿠.... 퇴근 실패!!");
                     }
-                    else if (value < 99)
-                    {
-                        Console.WriteLine("퇴근귄");
-                        Console.WriteLine("어잇쿠.... 퇴근 실패!!");
-                    }
-                    else // value == 99
+               // else if (value < 99)
+               // {
+               //     Console.WriteLine("퇴근귄");
+               //     Console.WriteLine("어잇쿠.... 퇴근 실패!!");
+               // }
+                    else if(value < 100) // value == 99
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("퇴근권");
                         Console.ResetColor();
                         Console.WriteLine("이... 이럴수가 퇴근을 하다니!!!!!");
+                        Util.PressAnyKey("퇴근하려면 아무키나 누르세요...");
                         Game.GameClear();
                     }
 

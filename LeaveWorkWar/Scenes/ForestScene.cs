@@ -1,10 +1,10 @@
 ﻿namespace LeaveWorkWar.Scenes;
 
-public class MineScene : Standard_Scene
+public class ForestScene : Standard_Scene
 {
-    public MineScene() 
+    public ForestScene() 
     {
-        name = "Mine";
+        name = "Forest";
         Console.ForegroundColor = ConsoleColor.DarkGreen;
         mapData = new string[]
         {
@@ -39,9 +39,6 @@ public class MineScene : Standard_Scene
         
         portalArt.Add(new PortalArt(ConsoleColor.White, new Vector2(1, 4),new Vector2(1,5)));
         gameObjects.Add(new Place("DownTown", 'D', new Vector2(5, 3)));
-        mineralArt.Add(new MineralArt(ConsoleColor.Cyan, new Vector2(70, 1), new Vector2(70, 2)));
-        gameObjects.Add(new MineGetMineral(new Vector2(75,3)));
-        
     }
 
     public override void Enter()
