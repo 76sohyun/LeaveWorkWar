@@ -39,9 +39,17 @@ public class DownTownScene : Standard_Scene
         mountainArt = new List<MountainArt>();
         mountaincoinArt = new List<MountaincoinArt>();
         townstoreArt = new List<TownStoreArt>();
+        mineArt = new List<MineArt>();
+        pickstoreArt = new List<PickStoreArt>();
+        mineralArt = new List<MineralArt>();
+        minestoreArt = new List<MineStoreArt>();
         
         townportalArt.Add(new TownPortalArt(ConsoleColor.White, new Vector2(80, 11),new Vector2(80, 12)));
         gameObjects.Add(new Place("Town", 'T', new Vector2(85, 10)));
+        mineArt.Add(new MineArt(ConsoleColor.White, new Vector2(50, 11),new Vector2(50, 12)));
+        gameObjects.Add(new Place("Mine", 'M', new Vector2(55,10)));
+        minestoreArt.Add(new MineStoreArt(ConsoleColor.White, new Vector2(30, 11),new Vector2(30, 12)));
+        gameObjects.Add(new Mstore('※', new Vector2(33, 10)));
     }
 
     public override void Enter()
@@ -51,6 +59,13 @@ public class DownTownScene : Standard_Scene
             Game.Player.position = new Vector2(85,10);
             Game.Player.position1 = new Vector2(85,11);
             Game.Player.position2 = new Vector2(85,12);
+        }
+        else if (Game.prevSceneName == "Mine")
+        {
+            
+            Game.Player.position = new Vector2(55,10);
+            Game.Player.position1 = new Vector2(55,11);
+            Game.Player.position2 = new Vector2(55,12);
         }
         
         Game.Player.map = map;

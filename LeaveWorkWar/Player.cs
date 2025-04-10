@@ -23,6 +23,7 @@ public class Player
     
     public TownStore townStore;
     public PickStore pickStore;
+    public MineStore mineStore;
     
     private Bullet bullet;
     public Bullet Bullet { get { return bullet; } set{ bullet = value; } }
@@ -34,6 +35,7 @@ public class Player
         inventory = new Inventory();
         townStore = new TownStore();
         pickStore = new PickStore();
+        mineStore = new MineStore();
         money = 1000000;
     }
     

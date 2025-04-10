@@ -13,6 +13,9 @@ public abstract class Standard_Scene : BaseScene
     protected List<MountaincoinArt> mountaincoinArt;
     protected List<TownStoreArt> townstoreArt;
     protected List<PickStoreArt> pickstoreArt;
+    protected List<MineArt> mineArt;
+    protected List<MineralArt> mineralArt;
+    protected List<MineStoreArt> minestoreArt;
 
     public bool isPress;
     public override void Render()
@@ -51,6 +54,21 @@ public abstract class Standard_Scene : BaseScene
         foreach (PickStoreArt p in pickstoreArt)
         {
             p.Draw();
+        }
+
+        foreach (MineArt mr in mineArt)
+        {
+            mr.Draw();
+        }
+
+        foreach (MineralArt mrr in mineralArt)
+        {
+            mrr.Draw();
+        }
+
+        foreach (MineStoreArt ms in minestoreArt)
+        {
+            ms.Draw();
         }
         
         Game.Player.Print();

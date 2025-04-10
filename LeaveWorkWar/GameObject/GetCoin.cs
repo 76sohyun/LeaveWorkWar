@@ -12,6 +12,6 @@ public abstract class GetCoin : GameObject
 
     public override void Interact(Player player)
     {
-        player.Money += 20;
+        
     }
 }

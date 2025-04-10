@@ -8,7 +8,7 @@ public class Emerald : Item
         price = 50000;
         description = "엄청 희귀한 광물 .. 색이 정말 이쁘다..";
         symbol = "●";
-        
+        amount = 1;
     }
 
     public override void Use()

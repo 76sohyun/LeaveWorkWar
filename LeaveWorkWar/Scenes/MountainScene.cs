@@ -32,6 +32,10 @@ public class MountainScene : Standard_Scene
         mountainArt = new List<MountainArt>();
         mountaincoinArt = new List<MountaincoinArt>();
         townstoreArt = new List<TownStoreArt>();
+        mineArt = new List<MineArt>();
+        pickstoreArt = new List<PickStoreArt>();
+        mineralArt = new List<MineralArt>();
+        minestoreArt = new List<MineStoreArt>();
         
         townportalArt.Add(new TownPortalArt(ConsoleColor.White, new Vector2(1, 4),new Vector2(1,5)));
         gameObjects.Add(new Place("Town", 'T', new Vector2(5, 3)));

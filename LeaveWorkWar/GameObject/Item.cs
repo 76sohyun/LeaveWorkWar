@@ -8,6 +8,7 @@ public abstract class Item
     public int amount;
     public string symbol;
     
+    
 
     public Item()
     {

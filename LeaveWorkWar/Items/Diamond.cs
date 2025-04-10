@@ -8,6 +8,7 @@ public class Diamond : Item
         price = 10000;
         description = "다이아몬드 반지 가지고싶다..";
         symbol = "●";
+        amount = 1;
         
     }
 

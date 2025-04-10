@@ -61,6 +61,7 @@ public class Game
         sceneDic.Add("Town", new TownScene());
         sceneDic.Add("DownTown", new DownTownScene());
         sceneDic.Add("Mountain", new MountainScene());
+        sceneDic.Add("Mine", new MineScene());
         
         curScene = sceneDic["Title"];
     }

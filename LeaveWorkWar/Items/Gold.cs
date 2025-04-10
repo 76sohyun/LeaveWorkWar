@@ -8,7 +8,7 @@ public class Gold : Item
         price = 1000;
         description = "금은 노란색이다...";
         symbol = "●";
-        
+        amount = 1;
     }
 
     public override void Use()
